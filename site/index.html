@@ -31,19 +31,36 @@
 			]
 		]
 	</script>
+	<script type="text/json" id="v">
+		[
+			"Nebuďte slušnej",
+			"Řekněte pravdu",
+			"Kdo vám to řek"
+		]
+	</script>
 	<script>
-	document.addEventListener('DOMContentLoaded', (event) => {
+	var projev = function () {
 		var dada = JSON.parse(document.getElementById('j').text);
+		var slusnej = JSON.parse(document.getElementById('v').text);
 		const badada = dada[Math.floor(Math.random() * dada.length)];
 		document.getElementById('h').innerHTML = badada[0];
 		document.getElementById('p').innerHTML = badada[1];
+		document.getElementById('a').innerHTML = slusnej[Math.floor(Math.random() * slusnej.length)];
+	};
+	document.addEventListener('DOMContentLoaded', (event) => {
+		projev();
+		document.getElementById('a').addEventListener('click', (event) => {
+			event.preventDefault();
+			projev();
+		})
 	});
 	</script>
 </head>
 <body>
-	<div style="max-width: 600px; margin: 0 auto; font-family: Courier New, monospace; font-size: larger; line-height: 2em">
+	<div style="max-width: 600px; margin: 0 auto; padding: 1em; font-family: Courier New, monospace; font-size: larger; line-height: 2em">
 		<h1 style="text-align: center; margin: 2em auto" id="h"></h1>
 		<p id="p"></p>
+		<p style="text-align: center; margin: 4em auto"><a href="" id="a"></a></p>
 	</div>
 </body>
 </html>
