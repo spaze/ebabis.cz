@@ -1,56 +1,37 @@
+<html lang="cs">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PROJEV Andrej Babiš</title>
-<script>
-document.addEventListener('DOMContentLoaded', (event) => {
-	var dada = [
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>PROJEV Andrej Babiš</title>
+	<script type="text/json" id="j">
 		[
-			'MATEMATICKÝ MODEL',
-			`A v březnu někdo přišel<br>
-				s tím matematickým modelem<br>
-				<br>
-				A v srpnu někdo,<br>
-				sice byl to ten stejný člověk,<br>
-				ale už přišel v nějakém čase<br>
-				<br>
-				A ty,<br>
-				který měli přijít,<br>
-				nepřišli`,
-		],
-		[
-			'CHOVÁNÍ VIRU',
-			`Takže to je podle mě<br>
-				v této fázi<br>
-				zbytečná<br>
-				<br>
-				debata<br><br>
-				Já nemám pocit<br>
-				že bysme dělali<br>
-				něco<br>
-				<br>
-				špatně<br>
-				<br>
-				Nikdo pořádně ten vir,<br>
-				můžeme se bavit,<br>
-				tady je<br>
-				<br>
-				odborník<br>
-				<br>
-				Můžete se zeptat<br>
-				přimářů,<br>
-				jak ten vir<br><br>
-				se chová`
+			[
+				"MATEMATICKÝ MODEL",
+				"A v březnu někdo přišel<br>s tím matematickým modelem<br><br>A v srpnu někdo,<br>sice byl to ten stejný člověk,<br>ale už přišel v nějakém čase<br><br>A ty,<br>který měli přijít,<br>nepřišli"
+			],
+			[
+				"CHOVÁNÍ VIRU",
+				"Takže to je podle mě<br>v této fázi<br>zbytečná<br><br>debata<br><br>Já nemám pocit<br>že bysme dělali<br>něco<br><br>špatně<br><br>Nikdo pořádně ten vir,<br>můžeme se bavit,<br>tady je<br><br>odborník<br><br>Můžete se zeptat<br>přimářů,<br>jak ten vir<br><br>se chová"
+			],
+			[
+				"POCHYBNOST",
+				"Nemám žádný pocit,<br>že by sem pochybil<br><br>My jsme<br><br>zkrátka<br><br>rozhodovali"
+			]
 		]
-	];
-	const badada = dada[Math.floor(Math.random() * dada.length)];
-	document.getElementById('h').innerHTML = badada[0];
-	document.getElementById('p').innerHTML = badada[1];
-});
-</script>
+	</script>
+	<script>
+	document.addEventListener('DOMContentLoaded', (event) => {
+		var dada = JSON.parse(document.getElementById('j').text);
+		const badada = dada[Math.floor(Math.random() * dada.length)];
+		document.getElementById('h').innerHTML = badada[0];
+		document.getElementById('p').innerHTML = badada[1];
+	});
+	</script>
 </head>
 <body>
-<div style="max-width: 600px; margin: 0 auto; font-family: Courier New, monospace; font-size: larger; line-height: 2em">
-<h1 style="text-align: center; margin: 2em auto" id="h"></h1>
-<p id="p"></p>
-</div>
+	<div style="max-width: 600px; margin: 0 auto; font-family: Courier New, monospace; font-size: larger; line-height: 2em">
+		<h1 style="text-align: center; margin: 2em auto" id="h"></h1>
+		<p id="p"></p>
+	</div>
 </body>
+</html>
