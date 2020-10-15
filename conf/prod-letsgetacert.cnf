@@ -3,4 +3,4 @@ PRIVKEY_CMD="ecparam -genkey -name prime256v1 -out %s"
 CERT_DIR=/etc/nginx/certs
 SUBJECT="/C=CZ/ST=Prague/L=Prague/O=ebabis.cz/emailAddress=$SUBJECT_EMAIL/CN=$CN"
 WEBROOT_DIR=/srv/www/$CN
-DOMAINS="site=ebabis.cz,www.ebabis.cz"
+DOMAINS="site=ebabis.cz,www.ebabis.cz,01-a-v-breznu-nekdo-prisel.ebabis.cz,02-s-tim-matematickym-modelem.ebabis.cz,03-a-v-srpnu-nekdo.ebabis.cz,04-sice-byl-to-ten-stejny-clovek.ebabis.cz,05-ale-uz-prisel-v-nejakem-case.ebabis.cz,06-a-ty.ebabis.cz,07-ktery-meli-prijit.ebabis.cz,08-neprisli.ebabis.cz"
