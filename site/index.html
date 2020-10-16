@@ -68,18 +68,18 @@
 		document.getElementById('a').innerHTML = slusnej[Math.floor(Math.random() * slusnej.length)];
 		history.pushState('', '', '#' + badada[0]);
 	};
-	document.addEventListener('DOMContentLoaded', (event) => {
+	document.addEventListener('DOMContentLoaded', function (event) {
 		var le = -1337;
 		if (window.location.hash) {
 			var kox = decodeURIComponent(window.location.hash.substring(1));
-			dada.forEach((element, index) => {
+			dada.forEach(function(element, index) {
 				if (element[0] === kox) {
 					le = index;
 				}
 			});
 		}
 		projev(le)
-		document.getElementById('a').addEventListener('click', (event) => {
+		document.getElementById('a').addEventListener('click', function (event) {
 			event.preventDefault();
 			projev();
 		})
