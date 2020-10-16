@@ -56,16 +56,29 @@
 		]
 	</script>
 	<script>
-	var projev = function () {
-		var dada = JSON.parse(document.getElementById('j').text);
+	var dada = JSON.parse(document.getElementById('j').text);
+	var projev = function (indexe) {
 		var slusnej = JSON.parse(document.getElementById('v').text);
-		const badada = dada[Math.floor(Math.random() * dada.length)];
+		if (typeof indexe === 'undefined' || indexe < 0) {
+			indexe = Math.floor(Math.random() * dada.length);
+		}
+		const badada = dada[indexe];
 		document.getElementById('h').innerHTML = badada[0];
 		document.getElementById('p').innerHTML = badada[1];
 		document.getElementById('a').innerHTML = slusnej[Math.floor(Math.random() * slusnej.length)];
+		history.pushState('', '', '#' + badada[0]);
 	};
 	document.addEventListener('DOMContentLoaded', (event) => {
-		projev();
+		var le = -1337;
+		if (window.location.hash) {
+			var kox = decodeURIComponent(window.location.hash.substring(1));
+			dada.forEach((element, index) => {
+				if (element[0] === kox) {
+					le = index;
+				}
+			});
+		}
+		projev(le)
 		document.getElementById('a').addEventListener('click', (event) => {
 			event.preventDefault();
 			projev();
