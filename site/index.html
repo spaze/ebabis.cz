@@ -66,9 +66,8 @@
 		document.getElementById('h').innerHTML = badada[0];
 		document.getElementById('p').innerHTML = badada[1];
 		document.getElementById('a').innerHTML = slusnej[Math.floor(Math.random() * slusnej.length)];
-		history.pushState('', '', '#' + badada[0]);
 	};
-	document.addEventListener('DOMContentLoaded', function (event) {
+	var jako = function (event) {
 		var le = -1337;
 		if (window.location.hash) {
 			var kox = decodeURIComponent(window.location.hash.substring(1));
@@ -82,8 +81,11 @@
 		document.getElementById('a').addEventListener('click', function (event) {
 			event.preventDefault();
 			projev();
+			history.pushState('', '', '#' + document.getElementById('h').innerHTML);
 		})
-	});
+	};
+	document.addEventListener('DOMContentLoaded', jako);
+	window.addEventListener('popstate', jako);
 	</script>
 	<style>
 		#c {
